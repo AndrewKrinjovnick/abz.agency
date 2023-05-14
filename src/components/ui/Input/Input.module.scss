@@ -1,0 +1,105 @@
+@use 'styles/index';
+
+.wrapper {
+	display: inline-block;
+	width: 328px;
+
+	&.fullWidth {
+		width: 100%;
+	}
+}
+
+.input_wrapper {
+	position: relative;
+	width: 100%;
+
+	.fullWidth {
+		width: 100%;
+	}
+
+	&.error .shell {
+		border: 2px solid index.$error-color;
+	}
+
+	&.error .label {
+		color: index.$error-color;
+	}
+}
+
+.label {
+	@include index.body;
+	position: absolute;
+	top: 50%;
+	left: 16px;
+	color: index.$gray-color;
+	transform: translateY(-50%);
+	transform-origin: left top;
+	transition: all 0.2s ease;
+	max-width: 150px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	pointer-events: none;
+}
+
+.shell {
+	position: absolute;
+	border-radius: 4px;
+	border: 1px solid index.$gray-color-30;
+	pointer-events: none;
+	padding: 0 8px;
+	top: -5px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	.legend {
+		width: auto;
+		white-space: nowrap;
+		opacity: 0;
+		max-width: 0.01px;
+		line-height: 11px;
+		display: block;
+		transition: all 0.1s ease-in-out;
+
+		span {
+			max-width: 150px;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+		}
+	}
+}
+
+.input {
+	@include index.body;
+	padding: 14px 16px;
+	width: 100%;
+	appearance: none;
+	outline: none;
+	background: transparent;
+	border: none;
+	color: index.$black-color;
+	transition: all 0.3s ease-in-out;
+
+	&:focus + .label,
+	&.has_content + .label {
+		top: 0;
+		@include index.caption;
+	}
+
+	&:focus ~ .shell .legend,
+	&.has_content ~ .shell .legend {
+		max-width: 100%;
+	}
+
+	&::placeholder {
+		color: index.$gray-color;
+		opacity: 0;
+	}
+
+	&:focus::placeholder,
+	&.has_content::placeholder {
+		opacity: 1;
+	}
+}

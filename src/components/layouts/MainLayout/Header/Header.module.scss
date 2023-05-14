@@ -1,0 +1,16 @@
+@use 'styles/index';
+
+.wrapper {
+	background-color: index.$basic-white-color;
+	padding: 13px 0;
+}
+
+.container {
+	@include index.flex;
+}
+
+.buttons_wrapper {
+	@include index.stack {
+		margin-left: 10px;
+	}
+}

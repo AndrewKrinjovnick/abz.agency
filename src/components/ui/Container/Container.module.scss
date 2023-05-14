@@ -1,0 +1,30 @@
+@use 'styles/index';
+
+.container {
+	margin: 0 auto;
+	width: 100%;
+
+	&.fluent {
+		padding: 0;
+	}
+
+	@include index.media(sm) {
+		padding: 0 16px;
+		max-width: index.$container-mw-sm;
+	}
+
+	@include index.media(md) {
+		padding: 0 32px;
+		max-width: index.$container-mw-md;
+	}
+
+	@include index.media(lg) {
+		padding: 0 60px;
+		max-width: index.$container-mw-lg;
+	}
+
+	@include index.media(xl) {
+		padding: 0;
+		max-width: index.$container-mw-xl;
+	}
+}

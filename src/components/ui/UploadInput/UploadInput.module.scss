@@ -1,0 +1,45 @@
+@use 'styles/index';
+
+.file_wrapper {
+	width: 328px;
+	height: 54px;
+	border-radius: 0.25rem;
+	border: 1px solid index.$gray-color-30;
+	cursor: pointer;
+	@include index.flex;
+
+	&.fullWidth {
+		width: 100%;
+	}
+
+	.upload {
+		width: 83px;
+		border: 1px solid index.$black-color;
+		border-radius: 4px 0px 0px 4px;
+		height: 100%;
+		@include index.flex(center);
+	}
+
+	.file_name {
+		flex-grow: 1;
+		padding: 0 1rem;
+		color: index.$gray-color;
+	}
+
+	&.error {
+		border: 2px solid index.$error-color;
+
+		& .upload {
+			border: none;
+			border-right: 2px solid index.$error-color;
+		}
+	}
+}
+
+.real_file {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	opacity: 0;
+	pointer-events: none;
+}

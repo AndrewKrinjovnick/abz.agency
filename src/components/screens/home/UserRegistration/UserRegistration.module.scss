@@ -1,0 +1,5 @@
+@use 'styles/index';
+
+.wrapper {
+	@include index.flex(flex-start, center, column);
+}

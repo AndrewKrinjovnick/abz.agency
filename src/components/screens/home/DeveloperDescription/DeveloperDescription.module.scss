@@ -1,0 +1,46 @@
+@use 'styles/index';
+
+.container {
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		url('/assets/bg-developer-description.webp');
+
+	background-size: 350% 160%;
+	background-repeat: no-repeat;
+	background-position: center bottom;
+
+	@include index.media(sm) {
+		@include index.flex(center, flex-start);
+		height: 500px;
+	}
+
+	@include index.media(md) {
+		@include index.flex(center);
+	}
+
+	@include index.media(lg) {
+		height: 650px;
+	}
+}
+
+.wrapper {
+	color: index.$basic-white-color;
+	text-align: center;
+
+	@include index.media(sm) {
+		max-width: auto;
+		padding: 40px 16px 0;
+	}
+
+	@include index.media(md) {
+		padding: 0;
+		max-width: 380px;
+	}
+}
+
+.header {
+	margin-bottom: 21px;
+}
+
+.text {
+	margin-bottom: 32px;
+}

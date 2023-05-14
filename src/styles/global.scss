@@ -1,0 +1,26 @@
+@use './index.scss';
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	font-size: 16px;
+}
+
+body {
+	@include index.body;
+	font-family: 'Nunito', sans-serif;
+	font-weight: 400;
+	color: index.$black-color;
+	background-color: index.$gray-color-20;
+}
+
+#root {
+	height: 100%;
+}

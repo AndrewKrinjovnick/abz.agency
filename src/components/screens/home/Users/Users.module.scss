@@ -1,0 +1,29 @@
+@use 'styles/index';
+
+.users {
+	display: grid;
+	margin-bottom: 50px;
+
+	@include index.media(sm) {
+		grid-template-columns: repeat(1, 1fr);
+		gap: 20px;
+	}
+
+	@include index.media(md) {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 16px;
+	}
+
+	@include index.media(lg) {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 29px;
+	}
+}
+
+.loader_wrapper {
+	height: 200px;
+}
+
+.button_wrapper {
+	@include index.flex(center);
+}

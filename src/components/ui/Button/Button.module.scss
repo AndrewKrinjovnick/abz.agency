@@ -1,0 +1,26 @@
+@use 'styles/index';
+
+.btn {
+	@include index.body;
+	width: 100px;
+	border: none;
+	color: index.$black-color;
+	background-color: index.$primary-color;
+	border-radius: 80px;
+	padding: 4px;
+	cursor: pointer;
+
+	&:hover {
+		background-color: index.$light-yellow-color;
+	}
+
+	&:disabled {
+		cursor: auto;
+		color: index.$white-color;
+		background-color: index.$dark-gray-color;
+	}
+
+	&.fullWidth {
+		width: 100%;
+	}
+}

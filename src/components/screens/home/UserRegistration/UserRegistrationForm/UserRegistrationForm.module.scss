@@ -1,0 +1,42 @@
+@use 'styles/index';
+
+.form {
+	@include index.flex(center, center, column);
+	padding-bottom: 100px;
+}
+
+.wrapper {
+	@include index.media(sm) {
+		width: 328px;
+	}
+
+	@include index.media(md) {
+		width: 380px;
+	}
+}
+
+.text_input_wrapper {
+	width: 100%;
+	@include index.stack(center, center, column) {
+		margin-top: 50px;
+	}
+}
+
+.radio_group {
+	margin-top: 25px;
+	@include index.stack(center, flex-start, column) {
+		margin-top: 7px;
+		&:first-of-type {
+			margin-top: 11px;
+		}
+	}
+}
+
+.file {
+	margin-top: 47px;
+}
+
+.button_wrapper {
+	@include index.flex(center);
+	margin-top: 50px;
+}

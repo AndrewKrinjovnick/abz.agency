@@ -1,0 +1,11 @@
+@use 'styles/index';
+
+.text {
+	color: index.$gray-color;
+	padding: 0 1rem;
+	margin-top: 4px;
+
+	&.error {
+		color: index.$error-color;
+	}
+}

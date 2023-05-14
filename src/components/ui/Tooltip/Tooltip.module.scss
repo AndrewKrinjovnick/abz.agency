@@ -1,0 +1,50 @@
+@use 'styles/index';
+
+.tooltip_wrapper {
+	position: absolute;
+	z-index: index.$z-index-popup;
+}
+
+.tooltip {
+	background-color: index.$basic-black-color;
+	padding: 3px 16px;
+	border-radius: 4px;
+	color: index.$basic-white-color;
+	@include index.body;
+
+	&.left {
+		margin-right: index.$tooltip-margin;
+	}
+
+	&.right {
+		margin-left: index.$tooltip-margin;
+	}
+
+	&.top {
+		margin-bottom: index.$tooltip-margin;
+	}
+
+	&.bottom {
+		margin-top: index.$tooltip-margin;
+	}
+}
+
+.tooltip_animation_enter {
+	opacity: 0;
+	transform: scale(0);
+
+	&_active {
+		transition: opacity 0.3s ease-out, transform 0.1s ease-in-out;
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+.tooltip_animation_exit {
+	opacity: 1;
+
+	&_active {
+		transition: opacity 0.3s ease-out;
+		opacity: 0;
+	}
+}

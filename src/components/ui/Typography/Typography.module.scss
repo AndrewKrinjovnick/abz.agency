@@ -1,0 +1,15 @@
+@use 'styles/index';
+
+.h1,
+.h2,
+.h3 {
+	@include index.header;
+}
+
+.body {
+	@include index.body;
+}
+
+.caption {
+	@include index.caption;
+}

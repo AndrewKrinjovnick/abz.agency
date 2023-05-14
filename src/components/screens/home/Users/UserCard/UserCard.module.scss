@@ -1,0 +1,34 @@
+@use 'styles/index';
+
+.wrapper {
+	@include index.flex(center, center, column);
+	padding: 20px;
+	border-radius: 10px;
+	background-color: index.$basic-white-color;
+}
+
+.text {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+
+	&.name {
+		margin: 20px 0;
+	}
+
+	@include index.media(sm) {
+		max-width: 228px;
+	}
+
+	@include index.media(md) {
+		max-width: 304px;
+	}
+
+	@include index.media(lg) {
+		max-width: 242px;
+	}
+
+	@include index.media(xl) {
+		max-width: 330px;
+	}
+}

@@ -1,0 +1,46 @@
+@use './variables.scss';
+@use 'sass:map';
+
+@mixin header {
+	font-size: variables.$fs-header;
+	line-height: variables.$lh-header;
+	font-weight: 400;
+	margin: 0;
+}
+
+@mixin body {
+	font-size: variables.$fs-body;
+	line-height: variables.$lh-body;
+}
+
+@mixin caption {
+	font-size: variables.$fs-caption;
+	line-height: variables.$lh-caption;
+}
+
+@mixin flex($j-content: space-between, $a-items: center, $f-direction: null) {
+	display: flex;
+	justify-content: $j-content;
+	align-items: $a-items;
+
+	@if $f-direction {
+		flex-direction: $f-direction;
+	}
+}
+
+@mixin media($size) {
+	@each $name, $value in variables.$sizes {
+		@if $size == $name {
+			@media (min-width: $value) {
+				@content;
+			}
+		}
+	}
+}
+
+@mixin stack($j-content: space-between, $a-items: center, $f-direction: null) {
+	@include flex($j-content, $a-items, $f-direction);
+	> :not(style) + :not(style) {
+		@content;
+	}
+}

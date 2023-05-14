@@ -1,0 +1,44 @@
+@use 'styles/index';
+
+.label {
+	@include index.flex(flex-start);
+	cursor: pointer;
+
+	.radio {
+		width: 20px;
+		height: 20px;
+		display: inline-block;
+		border-radius: 50%;
+		border: 1px solid index.$gray-color-30;
+		position: relative;
+	}
+
+	.input {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		opacity: 0;
+		pointer-events: none;
+
+		&:checked + .radio {
+			border: 1px solid index.$secondary-color;
+
+			&::before {
+				content: '';
+				display: block;
+				width: 10px;
+				height: 10px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				border-radius: 50%;
+				background-color: index.$secondary-color;
+			}
+		}
+	}
+
+	.title {
+		margin-left: 0.8rem;
+	}
+}

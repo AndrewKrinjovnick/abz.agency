@@ -1,0 +1,37 @@
+$fs-body: 1rem;
+$fs-header: 2.5rem;
+$fs-caption: 0.75rem;
+
+$lh-body: 1.625;
+$lh-caption: 14px;
+$lh-header: 1;
+
+$sizes: (
+	sm: 360px,
+	md: 768px,
+	lg: 1024px,
+	xl: 2560px,
+);
+
+$container-mw-sm: auto;
+$container-mw-md: auto;
+$container-mw-lg: 1024px;
+$container-mw-xl: 1170px;
+
+$z-index-popup: 10;
+
+$tooltip-margin: 20px;
+
+$basic-black-color: #000000;
+$basic-white-color: #ffffff;
+$black-color: rgba(0, 0, 0, 0.87);
+$dark-gray-color: #b4b4b4;
+$error-color: #cb3d40;
+$gray-color: #7e7e7e;
+$gray-color-20: #e5e5e5;
+$gray-color-30: #d0cfcf;
+$light-gray-color: #f8f8f8;
+$light-yellow-color: #ffe302;
+$primary-color: #f4e041;
+$secondary-color: #00bdd3;
+$white-color: rgba(255, 255, 255, 0.87);
